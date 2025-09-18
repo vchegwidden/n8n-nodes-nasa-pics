@@ -1,10 +1,10 @@
-import { INodeType, INodeTypeDescription } from "n8n-workflow";
+import { INodeType, INodeTypeDescription, NodeConnectionType } from "n8n-workflow";
 
 export class NasaPics implements INodeType {
 	description: INodeTypeDescription = {
 		// Basic node details will go here
 		displayName: 'NASA Pics',
-		name: 'NasaPics',
+		name: 'nasaPics',
 		icon: 'file:NASA_logo.svg',
 		group: ['transform'],
 		version: 1,
@@ -13,8 +13,8 @@ export class NasaPics implements INodeType {
 		defaults: {
 			name: 'NASA Pics',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionType.Main],
+		outputs: [NodeConnectionType.Main],
 		credentials: [
 			{
 				name: 'NasaPicsApi',
